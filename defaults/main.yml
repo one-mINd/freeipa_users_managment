@@ -1,0 +1,5 @@
+---
+# defaults file for freeipa_users_managment
+ipaserver_hostname: krb.oom.local
+
+ipaserver_users_list: "{{ lookup('file','/home/mnhyc-r/Workplace/Ansible_projects/userstest.json') | from_json }}"

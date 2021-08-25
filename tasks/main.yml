@@ -1,0 +1,10 @@
+---
+# tasks file for freeipa_users_managment
+
+- name: Add users
+  include_tasks: add_users.yml
+  when: ipaserver_users_list is defined and state == 'present'
+
+- name: Delete users
+  include_tasks: delete_users.yml
+  when: ipaserver_users_list is defined and state == 'absent'

@@ -1,0 +1,10 @@
+---
+- name: Delete Users
+  community.general.ipa_user:
+    validate_certs: no
+    state: absent
+    ipa_host: "{{ ipaserver_hostname }}"
+    ipa_user: admin
+    ipa_pass: "{{ ipaadmin_password }}"
+    name: "{{ item.name }}"
+  with_items: "{{ ipaserver_users_list }}"
